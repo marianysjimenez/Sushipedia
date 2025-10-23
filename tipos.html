@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Sushi - Sushipedia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="main-title">🍣 Sushipedia: El Arte del Arroz y Pescado 🍱</h1>
+            <p class="subtitle">Descubre el fascinante mundo del sushi</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="tipos.html" class="nav-link active">Tipos de Sushi</a></li>
+            <li><a href="ingredientes.html" class="nav-link">Ingredientes</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="glosario.html" class="nav-link">Glosario</a></li>
+            <li><a href="datos-curiosos.html" class="nav-link">Datos Curiosos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sushi Types Section -->
+        <section class="section types-section">
+            <h2 class="section-title-center">Explora los Diferentes Tipos de Sushi</h2>
+            <p class="section-intro">
+                El sushi es mucho más que pescado crudo. Es un arte culinario que combina arroz avinagrado 
+                con ingredientes frescos de la más alta calidad. Cada tipo tiene su propia personalidad y tradición.
+            </p>
+            
+            <div class="sushi-grid">
+                <!-- Nigiri -->
+                <div class="sushi-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="sushi-illustration nigiri-illustration">
+                            <div class="nigiri-piece">
+                                <div class="rice-base"></div>
+                                <div class="fish-top salmon"></div>
+                            </div>
+                            <div class="nigiri-piece">
+                                <div class="rice-base"></div>
+                                <div class="fish-top tuna"></div>
+                            </div>
+                        </div>
+                        <div class="card-title-section">
+                            <h3 class="sushi-name">Nigiri</h3>
+                            <p class="sushi-description">
+                                Pescado fresco sobre arroz avinagrado. El tipo más clásico y 
+                                elegante de sushi, donde la calidad del pescado es la estrella.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="sushi-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Arroz moldeado a mano</li>
+                                <li>Pescado de grado sashimi</li>
+                                <li>Se come con las manos</li>
+                                <li>Un bocado por pieza</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maki -->
+                <div class="sushi-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="sushi-illustration maki-illustration">
+                            <div class="maki-roll green-roll">
+                                <div class="maki-filling"></div>
+                            </div>
+                            <div class="maki-set">
+                                <div class="maki-roll small-roll"></div>
+                                <div class="maki-roll small-roll"></div>
+                                <div class="maki-roll small-roll"></div>
+                                <div class="maki-roll small-roll"></div>
+                            </div>
+                        </div>
+                        <div class="card-title-section">
+                            <h3 class="sushi-name">Maki</h3>
+                            <p class="sushi-description">
+                                Rollos de alga nori, arroz y relleno variado. Los makis son 
+                                perfectos para principiantes y vienen en muchas combinaciones.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="sushi-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Envueltos en alga nori</li>
+                                <li>Arroz por dentro</li>
+                                <li>Rellenos variados</li>
+                                <li>Cortados en 6-8 piezas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sashimi -->
+                <div class="sushi-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="sushi-illustration sashimi-illustration">
+                            <div class="sashimi-piece piece-1">
+                                <div class="sashimi-slice"></div>
+                                <div class="rice-bed"></div>
+                            </div>
+                            <div class="sashimi-piece piece-2">
+                                <div class="sashimi-slice"></div>
+                                <div class="rice-bed"></div>
+                            </div>
+                            <div class="sashimi-piece piece-3">
+                                <div class="sashimi-slice"></div>
+                                <div class="rice-bed"></div>
+                            </div>
+                        </div>
+                        <div class="card-title-section">
+                            <h3 class="sushi-name">Sashimi</h3>
+                            <p class="sushi-description">
+                                Pescado crudo de la más alta calidad, cortado finamente. 
+                                La pureza del sabor sin arroz ni condimentos adicionales.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="sushi-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Solo pescado fresco</li>
+                                <li>Sin arroz</li>
+                                <li>Cortes precisos</li>
+                                <li>Se sirve con wasabi y soya</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uramaki -->
+                <div class="sushi-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="sushi-illustration uramaki-illustration">
+                            <div class="uramaki-roll">
+                                <div class="uramaki-rice"></div>
+                                <div class="uramaki-nori"></div>
+                                <div class="uramaki-filling"></div>
+                            </div>
+                        </div>
+                        <div class="card-title-section">
+                            <h3 class="sushi-name">Uramaki</h3>
+                            <p class="sushi-description">
+                                El arroz va por fuera del nori. Un estilo occidental que 
+                                permite decoraciones creativas con semillas de sésamo.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="sushi-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Arroz por fuera</li>
+                                <li>Nori por dentro</li>
+                                <li>Decoraciones externas</li>
+                                <li>Estilo occidental</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temaki -->
+                <div class="sushi-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="sushi-illustration temaki-illustration">
+                            <div class="temaki-cone">
+                                <div class="temaki-nori"></div>
+                                <div class="temaki-filling"></div>
+                            </div>
+                        </div>
+                        <div class="card-title-section">
+                            <h3 class="sushi-name">Temaki</h3>
+                            <p class="sushi-description">
+                                Cono de alga nori relleno de arroz y otros ingredientes. 
+                                Se come con las manos y es perfecto para compartir.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="sushi-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Forma de cono</li>
+                                <li>Se come con las manos</li>
+                                <li>Perfecto para compartir</li>
+                                <li>Relleno generoso</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chirashi -->
+                <div class="sushi-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="sushi-illustration chirashi-illustration">
+                            <div class="chirashi-bowl">
+                                <div class="chirashi-rice"></div>
+                                <div class="chirashi-toppings"></div>
+                            </div>
+                        </div>
+                        <div class="card-title-section">
+                            <h3 class="sushi-name">Chirashi</h3>
+                            <p class="sushi-description">
+                                Un bol de arroz avinagrado cubierto con una variedad de 
+                                pescado y vegetales. La forma más rápida de disfrutar sushi.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="sushi-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Servido en bol</li>
+                                <li>Múltiples ingredientes</li>
+                                <li>Fácil de comer</li>
+                                <li>Presentación colorida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="additional-info">
+                <h3 class="info-title">¿Cómo Elegir tu Sushi?</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>🍣 Para Principiantes</h4>
+                        <p>Empieza con maki y uramaki. Son más suaves y familiares al paladar occidental.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🐟 Para Aventureros</h4>
+                        <p>Prueba el nigiri y sashimi. La pureza del sabor te sorprenderá.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>👥 Para Compartir</h4>
+                        <p>El temaki y chirashi son perfectos para disfrutar en grupo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">🍣 Hecho con amor para los amantes del sushi 🍱</p>
+            <p class="footer-subtext">Sushipedia © 2024 - El Arte del Arroz y Pescado</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleCard(card) {
+            const content = card.querySelector('.card-content');
+            const icon = card.querySelector('.expand-icon');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.textContent = '+';
+                card.classList.remove('expanded');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.textContent = '−';
+                card.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>

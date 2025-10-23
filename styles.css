@@ -1,0 +1,1409 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-pink: #FFE5F1;
+    --soft-pink: #FFB6D9;
+    --dark-pink: #FF6BAE;
+    --beige: #F5E6D3;
+    --light-beige: #FAF3E8;
+    --brown: #8B6F47;
+    --dark-brown: #5C4A37;
+    --salmon: #FF8C94;
+    --tuna: #FF6B6B;
+    --rice: #FFF8DC;
+    --nori: #2D5016;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, var(--primary-pink) 0%, var(--light-beige) 100%);
+    color: var(--dark-brown);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--primary-pink) 100%);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--brown);
+    font-weight: 600;
+}
+
+/* Navigation */
+.nav-bar {
+    background: var(--light-beige);
+    padding: 1rem;
+    box-shadow: 0 2px 10px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-brown);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: var(--beige);
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--soft-pink);
+    color: var(--dark-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.section-title-center {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.40;
+    z-index: 0;
+    /* Recortar para enfocar solo el restaurante */
+    clip-path: inset(10% 10% 10% 10%);
+    /* Bordes redondeados */
+    border-radius: 20px;
+}
+
+.welcome-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.welcome-text {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 245, 230, 0.85);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chef-illustration {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.speech-bubble {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    position: relative;
+    box-shadow: 0 4px 15px var(--shadow);
+    order: 1;
+    margin-right: 2rem;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white;
+}
+
+.chef-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    order: 2;
+}
+
+.speech-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin: 0;
+}
+
+.chef-image {
+    max-width: 400px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+    /* Sombra suave para dar profundidad */
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Animación flotante para la chef */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.welcome-text {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 245, 230, 0.85);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--brown);
+}
+
+/* Navigation Section */
+.navigation-section {
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+    margin-top: 2rem;
+}
+
+/* Navigation Cards */
+.navigation-cards {
+    text-align: center;
+}
+
+.cards-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.nav-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.nav-card:hover::before {
+    left: 100%;
+}
+
+.nav-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px var(--shadow);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 0.8rem;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Card specific colors */
+.tipos-card:hover {
+    background: linear-gradient(135deg, #FFE5F1 0%, #FFB6D9 100%);
+}
+
+.ingredientes-card:hover {
+    background: linear-gradient(135deg, #F5E6D3 0%, #FAF3E8 100%);
+}
+
+.historia-card:hover {
+    background: linear-gradient(135deg, #E8F4FD 0%, #B8E6B8 100%);
+}
+
+.glosario-card:hover {
+    background: linear-gradient(135deg, #FFF8DC 0%, #F0E68C 100%);
+}
+
+.curiosos-card:hover {
+    background: linear-gradient(135deg, #E6F3FF 0%, #B3D9FF 100%);
+}
+
+/* Expandable Cards */
+.expandable-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.expandable-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow);
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    gap: 1rem;
+}
+
+.card-title-section {
+    flex: 1;
+}
+
+.expand-icon {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-pink);
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 182, 217, 0.2);
+    border-radius: 50%;
+}
+
+.expandable-card.expanded .expand-icon {
+    transform: rotate(45deg);
+}
+
+.card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--soft-pink);
+    text-align: left;
+}
+
+.expandable-card.expanded .card-content {
+    max-height: 500px;
+}
+
+/* Responsive adjustments for expandable cards */
+@media (max-width: 768px) {
+    .ingredients-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .ingredient-card {
+        min-height: 250px;
+        padding: 1.5rem;
+    }
+    
+    .card-header {
+        gap: 0.8rem;
+    }
+    
+    .ingredient-icon {
+        font-size: 3rem;
+    }
+    
+    .expand-icon {
+        top: 0.8rem;
+        right: 0.8rem;
+        width: 25px;
+        height: 25px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Sushi Types Section */
+.sushi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sushi-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.sushi-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px var(--shadow);
+}
+
+.sushi-illustration {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* Nigiri Illustration */
+.nigiri-illustration {
+    gap: 1rem;
+}
+
+.nigiri-piece {
+    position: relative;
+    width: 50px;
+    height: 60px;
+}
+
+.rice-base {
+    width: 50px;
+    height: 35px;
+    background: var(--rice);
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.fish-top {
+    width: 50px;
+    height: 25px;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 0;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.salmon {
+    background: var(--salmon);
+}
+
+.tuna {
+    background: var(--tuna);
+}
+
+/* Maki Illustration */
+.maki-illustration {
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.maki-roll {
+    width: 60px;
+    height: 25px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.green-roll {
+    background: #90EE90;
+}
+
+.maki-filling {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 15px;
+    background: white;
+    border-radius: 10px;
+}
+
+.maki-set {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.small-roll {
+    width: 20px;
+    height: 15px;
+    background: var(--nori);
+    border-radius: 10px;
+}
+
+/* Sashimi Illustration */
+.sashimi-illustration {
+    gap: 0.5rem;
+}
+
+.sashimi-piece {
+    position: relative;
+    width: 40px;
+    height: 50px;
+}
+
+.sashimi-slice {
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+    background: var(--salmon);
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.rice-bed {
+    width: 40px;
+    height: 15px;
+    background: var(--rice);
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+/* Uramaki Illustration */
+.uramaki-roll {
+    width: 70px;
+    height: 40px;
+    position: relative;
+}
+
+.uramaki-rice {
+    width: 70px;
+    height: 40px;
+    background: var(--rice);
+    border-radius: 20px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.uramaki-nori {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65px;
+    height: 35px;
+    background: var(--nori);
+    border-radius: 18px;
+}
+
+.uramaki-filling {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 25px;
+    background: white;
+    border-radius: 12px;
+}
+
+/* Temaki Illustration */
+.temaki-cone {
+    width: 60px;
+    height: 80px;
+    position: relative;
+}
+
+.temaki-nori {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 80px solid var(--nori);
+    position: relative;
+}
+
+.temaki-filling {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    background: var(--rice);
+    border-radius: 5px;
+}
+
+/* Chirashi Illustration */
+.chirashi-bowl {
+    width: 80px;
+    height: 60px;
+    position: relative;
+}
+
+.chirashi-bowl::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 40px;
+    background: var(--beige);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+.chirashi-rice {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 70px;
+    height: 30px;
+    background: var(--rice);
+    border-radius: 8px;
+}
+
+.chirashi-toppings {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.2rem;
+}
+
+.chirashi-toppings::before,
+.chirashi-toppings::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--salmon);
+    border-radius: 50%;
+}
+
+.chirashi-toppings::after {
+    background: var(--tuna);
+}
+
+.sushi-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 0.8rem;
+}
+
+.sushi-description {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--brown);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.sushi-details {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--soft-pink);
+}
+
+.sushi-details h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-pink);
+    margin-bottom: 0.8rem;
+}
+
+.sushi-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sushi-details li {
+    font-size: 0.9rem;
+    color: var(--brown);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.sushi-details li::before {
+    content: '🍣';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.additional-info {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.info-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.info-card h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Ingredients Section */
+.ingredients-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ingredient-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ingredient-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px var(--shadow);
+}
+
+.ingredient-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.ingredient-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 0.8rem;
+}
+
+.ingredient-description {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.ingredient-details {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.ingredient-details h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-pink);
+    margin-bottom: 0.8rem;
+}
+
+.ingredient-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-details li {
+    font-size: 0.9rem;
+    color: var(--brown);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.ingredient-details li::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.preparation-tips {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.tips-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.tip-card h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+}
+
+.tip-card p {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* History Section */
+.history-section {
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+}
+
+.history-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--soft-pink);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--soft-pink);
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.timeline-year {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark-pink);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: var(--brown);
+    line-height: 1.7;
+}
+
+.timeline-details {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--soft-pink);
+}
+
+.timeline-details h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-pink);
+    margin-bottom: 0.8rem;
+}
+
+.timeline-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-details li {
+    font-size: 0.9rem;
+    color: var(--brown);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.timeline-details li::before {
+    content: '📜';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cultural-impact {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.impact-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.impact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.impact-card h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+}
+
+.impact-card p {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Glossary Section */
+.glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.glossary-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.glossary-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.glossary-term {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--dark-pink);
+    margin-bottom: 0.5rem;
+}
+
+.glossary-definition {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+}
+
+.glossary-categories {
+    margin-top: 3rem;
+}
+
+.category-section {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--soft-pink) 0%, var(--primary-pink) 100%);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.glossary-example {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 182, 217, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--soft-pink);
+}
+
+.glossary-example strong {
+    color: var(--dark-pink);
+    font-weight: 700;
+}
+
+.fun-facts {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.facts-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.fact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.fact-card h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+}
+
+.fact-card p {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Fun Facts Section */
+.fun-facts-section {
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+}
+
+.curiosities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.curiosity-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.curiosity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px var(--shadow);
+}
+
+.curiosity-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.curiosity-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+}
+
+.curiosity-description {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.additional-curiosities {
+    margin-top: 4rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.additional-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.curiosities-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.curiosity-item {
+    background: linear-gradient(135deg, var(--primary-pink) 0%, var(--soft-pink) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.curiosity-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.curiosity-item h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+}
+
+.curiosity-item p {
+    font-size: 0.95rem;
+    color: var(--brown);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--dark-brown) 0%, var(--brown) 100%);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.footer-subtext {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .nav-list {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .welcome-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chef-illustration {
+        order: 1;
+    }
+
+    .welcome-text {
+        order: 2;
+    }
+
+    .speech-bubble {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .speech-bubble::after {
+        bottom: -15px;
+        right: 50px;
+        border-top: 15px solid white;
+        border-right: 15px solid transparent;
+        border-left: 15px solid transparent;
+    }
+
+    .section-title-center {
+        font-size: 2rem;
+    }
+
+    .history-timeline {
+        padding-left: 2rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+    }
+
+    .sushi-grid,
+    .ingredients-container,
+    .glossary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

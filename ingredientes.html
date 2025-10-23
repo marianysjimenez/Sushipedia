@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredientes del Sushi - Sushipedia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="main-title">🍣 Sushipedia: El Arte del Arroz y Pescado 🍱</h1>
+            <p class="subtitle">Descubre el fascinante mundo del sushi</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="tipos.html" class="nav-link">Tipos de Sushi</a></li>
+            <li><a href="ingredientes.html" class="nav-link active">Ingredientes</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="glosario.html" class="nav-link">Glosario</a></li>
+            <li><a href="datos-curiosos.html" class="nav-link">Datos Curiosos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Ingredients Section -->
+        <section class="section ingredients-section">
+            <h2 class="section-title-center">Los Ingredientes Esenciales del Sushi</h2>
+            <p class="section-intro">
+                La calidad de los ingredientes es fundamental en el arte del sushi. Cada elemento 
+                tiene su propósito específico y contribuye al equilibrio perfecto de sabores y texturas.
+            </p>
+            
+            <div class="ingredients-container">
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🍚</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Arroz de Sushi</h3>
+                            <p class="ingredient-description">
+                                El corazón del sushi. Un arroz de grano corto, glutinoso, 
+                                que se cocina y se sazona con vinagre de arroz, azúcar y sal. 
+                                Su textura única es fundamental para la experiencia.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Grano corto y glutinoso</li>
+                                <li>Se cocina con proporción 1:1.2</li>
+                                <li>Se sazona con vinagre, azúcar y sal</li>
+                                <li>Debe estar a temperatura ambiente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🐟</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Pescado Fresco</h3>
+                            <p class="ingredient-description">
+                                Atún, salmón, pez mantequilla, pargo... La calidad y frescura 
+                                del pescado es lo que diferencia un buen sushi de uno excepcional. 
+                                Debe ser de grado sashimi.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Tipos Populares:</h4>
+                            <ul>
+                                <li>Maguro (Atún rojo)</li>
+                                <li>Sake (Salmón)</li>
+                                <li>Hamachi (Pez mantequilla)</li>
+                                <li>Tai (Pargo)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🌿</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Alga Nori</h3>
+                            <p class="ingredient-description">
+                                Alga marina seca y tostada que envuelve los rollos. Aporta 
+                                un sabor umami único y textura crujiente. Es rica en minerales 
+                                y vitaminas.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Propiedades:</h4>
+                            <ul>
+                                <li>Rica en yodo y minerales</li>
+                                <li>Sabor umami característico</li>
+                                <li>Textura crujiente</li>
+                                <li>Se tuesta antes de usar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🥒</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Vegetales</h3>
+                            <p class="ingredient-description">
+                                Pepino, aguacate, rábano daikon, cebollín... Aportan frescura, 
+                                textura y equilibrio visual. Son esenciales en muchos tipos de sushi.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Vegetales Comunes:</h4>
+                            <ul>
+                                <li>Kyuuri (Pepino)</li>
+                                <li>Avocado (Aguacate)</li>
+                                <li>Daikon (Rábano japonés)</li>
+                                <li>Negi (Cebollín)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🫚</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Jengibre en Escabeche</h3>
+                            <p class="ingredient-description">
+                                El gari se sirve entre bocados para limpiar el paladar. 
+                                Su sabor dulce y picante realza la experiencia gustativa.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Función:</h4>
+                            <ul>
+                                <li>Limpia el paladar</li>
+                                <li>Sabor dulce y picante</li>
+                                <li>Se come entre bocados</li>
+                                <li>Color rosa característico</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🌶️</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Wasabi</h3>
+                            <p class="ingredient-description">
+                                Rábano picante japonés que añade un toque picante único. 
+                                Se usa con moderación para no dominar el sabor del pescado.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Uso:</h4>
+                            <ul>
+                                <li>Se usa con moderación</li>
+                                <li>Picante pero no abrasivo</li>
+                                <li>Realza el sabor del pescado</li>
+                                <li>Se mezcla con soya</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🍶</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Salsa de Soya</h3>
+                            <p class="ingredient-description">
+                                El condimento perfecto para realzar los sabores. Se usa 
+                                con moderación para no ocultar el sabor natural del sushi.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Tipos:</h4>
+                            <ul>
+                                <li>Koikuchi (Salsa oscura)</li>
+                                <li>Usukuchi (Salsa clara)</li>
+                                <li>Tamari (Sin trigo)</li>
+                                <li>Se usa con moderación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-card expandable-card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <div class="ingredient-icon">🥚</div>
+                        <div class="card-title-section">
+                            <h3 class="ingredient-name">Tamagoyaki</h3>
+                            <p class="ingredient-description">
+                                Tortilla japonesa dulce hecha con huevo, azúcar y salsa de soya. 
+                                Un ingrediente clásico que añade dulzura y textura suave.
+                            </p>
+                        </div>
+                        <div class="expand-icon">+</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="ingredient-details">
+                            <h4>Características:</h4>
+                            <ul>
+                                <li>Dulce y suave</li>
+                                <li>Textura esponjosa</li>
+                                <li>Color dorado</li>
+                                <li>Perfecto para nigiri</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preparation Tips -->
+            <div class="preparation-tips">
+                <h3 class="tips-title">Consejos para Preparar Sushi</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>🍚 Preparación del Arroz</h4>
+                        <p>Lava el arroz hasta que el agua salga clara. Cocínalo con la proporción correcta de agua y déjalo reposar 10 minutos antes de sazonarlo.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🐟 Selección de Pescado</h4>
+                        <p>Busca pescado de grado sashimi, muy fresco y de proveedores confiables. Debe tener un olor fresco del mar, no a pescado.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🌿 Manejo del Nori</h4>
+                        <p>Tuesta ligeramente el nori antes de usarlo para que sea más crujiente. Manténlo en un lugar seco y fresco.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🥢 Técnica de Preparación</h4>
+                        <p>Mantén las manos húmedas al trabajar con arroz. La temperatura ambiente es ideal para el arroz de sushi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">🍣 Hecho con amor para los amantes del sushi 🍱</p>
+            <p class="footer-subtext">Sushipedia © 2024 - El Arte del Arroz y Pescado</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleCard(card) {
+            const content = card.querySelector('.card-content');
+            const icon = card.querySelector('.expand-icon');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.textContent = '+';
+                card.classList.remove('expanded');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.textContent = '−';
+                card.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>
