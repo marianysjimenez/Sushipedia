@@ -52,6 +52,44 @@
             </div>
         </section>
 
+        <!-- Quiz Section -->
+        <section class="section quiz-section">
+            <div class="quiz-container">
+                <div class="quiz-card">
+                    <h3 class="quiz-title">Pon a prueba tus conocimientos sobre el sushi</h3>
+                    <p class="section-description" style="text-align:center;margin-top:0.2rem; margin-bottom:0.8rem;">
+                        ¿Listo para jugar? Responde 7 preguntas divertidas y ¡gana un sushi digital! 🍣
+                    </p>
+                    <a href="quiz.html" class="quiz-button">Jugar Quiz 🍙</a>
+                    <div id="quiz-ui" class="quiz-ui" style="display:none;">
+                        <div class="quiz-decor" aria-hidden="true">
+                            <span class="float-emoji">🍣</span>
+                            <span class="float-emoji">🥢</span>
+                            <span class="float-emoji">🍙</span>
+                            <span class="float-emoji">🧂</span>
+                        </div>
+                        <div class="quiz-header">
+                            <span id="quiz-progress" class="quiz-progress">Pregunta 1/7</span>
+                            <span id="quiz-score" class="quiz-score">Puntos: 0</span>
+                        </div>
+                        <div class="quiz-progressbar">
+                            <div id="quiz-progressbar-fill" class="quiz-progressbar-fill" style="width:0%;"></div>
+                        </div>
+                        <div id="quiz-question" class="quiz-question"></div>
+                        <div id="quiz-answers" class="answers-grid"></div>
+                        <div id="quiz-explanation" class="quiz-explanation"></div>
+                        <div class="quiz-actions">
+                            <button id="next-question-btn" class="next-button" disabled>Siguiente ▶</button>
+                        </div>
+                        <div id="quiz-result" class="quiz-result" style="display:none;"></div>
+                        <div class="quiz-replay" style="display:none; text-align:center; margin-top:0.5rem;">
+                            <button id="retry-quiz-btn" class="quiz-button" style="margin-top:0.5rem;">Jugar otra vez 🔁</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Navigation Cards Section -->
         <section class="section navigation-section">
             <div class="navigation-cards">

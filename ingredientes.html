@@ -279,10 +279,21 @@
     <script src="script.js"></script>
     <script>
         function toggleCard(card) {
+            const container = card.parentElement;
+            const allCards = container.querySelectorAll('.expandable-card');
+            allCards.forEach(c => {
+                if (c !== card) {
+                    const otherContent = c.querySelector('.card-content');
+                    const otherIcon = c.querySelector('.expand-icon');
+                    otherContent.style.maxHeight = null;
+                    otherIcon.textContent = '+';
+                    c.classList.remove('expanded');
+                }
+            });
+
             const content = card.querySelector('.card-content');
             const icon = card.querySelector('.expand-icon');
-            
-            if (content.style.maxHeight) {
+            if (card.classList.contains('expanded')) {
                 content.style.maxHeight = null;
                 icon.textContent = '+';
                 card.classList.remove('expanded');

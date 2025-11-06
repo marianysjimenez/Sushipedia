@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Sushi - Sushipedia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="main-title">🎮 Quiz Sushi: ¡Pon a prueba tu paladar! 🍣</h1>
+            <p class="subtitle">Responde 7 preguntas y gana tu sushi digital</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="tipos.html" class="nav-link">Tipos de Sushi</a></li>
+            <li><a href="ingredientes.html" class="nav-link">Ingredientes</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="glosario.html" class="nav-link">Glosario</a></li>
+            <li><a href="datos-curiosos.html" class="nav-link">Datos Curiosos</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="section quiz-section">
+            <div class="quiz-card">
+                <h3 class="quiz-title">Pon a prueba tus conocimientos sobre el sushi</h3>
+                <div id="quiz-ui" class="quiz-ui open" style="display:block;">
+                    <div class="quiz-decor" aria-hidden="true">
+                        <span class="float-emoji">🍣</span>
+                        <span class="float-emoji">🥢</span>
+                        <span class="float-emoji">🍙</span>
+                        <span class="float-emoji">🧂</span>
+                    </div>
+                    <div class="quiz-header">
+                        <span id="quiz-progress" class="quiz-progress">Pregunta 1/7</span>
+                        <span id="quiz-score" class="quiz-score">Puntos: 0</span>
+                    </div>
+                    <div class="quiz-progressbar">
+                        <div id="quiz-progressbar-fill" class="quiz-progressbar-fill" style="width:0%;"></div>
+                    </div>
+                    <div id="quiz-question" class="quiz-question"></div>
+                    <div id="quiz-answers" class="answers-grid"></div>
+                    <div id="quiz-explanation" class="quiz-explanation"></div>
+                    <div class="quiz-actions">
+                        <button id="next-question-btn" class="next-button" disabled>Siguiente ▶</button>
+                    </div>
+                    <div id="quiz-result" class="quiz-result" style="display:none;"></div>
+                    <div class="quiz-replay" style="display:none; text-align:center; margin-top:0.5rem;">
+                        <button id="retry-quiz-btn" class="quiz-button" style="margin-top:0.5rem;">Jugar otra vez 🔁</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">🍣 Hecho con amor para los amantes del sushi 🍱</p>
+            <p class="footer-subtext">Sushipedia © 2024 - El Arte del Arroz y Pescado</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Fallback: si por cualquier razón el motor principal no pintó la primera pregunta,
+    // iniciamos un quiz funcional aquí con 7 preguntas aleatorias.
+    (function(){
+        function ready(fn){ if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', fn);} else { fn(); } }
+        ready(function(){
+            const qEl = document.getElementById('quiz-question');
+            const aEl = document.getElementById('quiz-answers');
+            const nBtn = document.getElementById('next-question-btn');
+            const pEl = document.getElementById('quiz-progress');
+            const sEl = document.getElementById('quiz-score');
+            const expEl = document.getElementById('quiz-explanation');
+            const resEl = document.getElementById('quiz-result');
+            const bar = document.getElementById('quiz-progressbar-fill');
+            if(!qEl || !aEl || !nBtn) return;
+
+            setTimeout(function(){
+                if(qEl.textContent && aEl.children.length) return; // ya está funcionando el motor principal
+
+                const bank = [
+                    {q:'¿Cuál es el corazón del sushi?',o:[
+                        {t:'Arroz de grano corto sazonado',c:true,exp:'El arroz avinagrado sostiene todo el equilibrio del sushi.'},
+                        {t:'Salsa de soya',c:false,exp:'La soya acompaña; el corazón es el arroz.'},
+                        {t:'Alga nori',c:false,exp:'El nori envuelve, pero el centro es el arroz.'}
+                    ]},
+                    {q:'El sashimi se caracteriza por…',o:[
+                        {t:'Servirse sin arroz',c:true,exp:'Es pescado crudo de alta calidad, sin arroz.'},
+                        {t:'Arroz por fuera',c:false,exp:'Eso es uramaki.'},
+                        {t:'Forma de cono',c:false,exp:'La forma de cono es temaki.'}
+                    ]},
+                    {q:'En un uramaki, ¿qué va por fuera?',o:[
+                        {t:'El arroz',c:true,exp:'En el uramaki el arroz va por fuera del nori.'},
+                        {t:'El nori',c:false,exp:'El nori va por dentro.'},
+                        {t:'El pescado',c:false,exp:'El pescado va como relleno.'}
+                    ]},
+                    {q:'¿Qué rol cumple el jengibre encurtido (gari)?',o:[
+                        {t:'Limpiar el paladar entre bocados',c:true,exp:'Refresca el paladar para apreciar nuevos sabores.'},
+                        {t:'Aportar más picante',c:false,exp:'El picor lo aporta el wasabi.'},
+                        {t:'Sujetar el pescado',c:false,exp:'No se usa para eso.'}
+                    ]},
+                    {q:'El nori aporta principalmente…',o:[
+                        {t:'Umami y textura crujiente',c:true,exp:'Aporta umami y crujiente.'},
+                        {t:'Dulzor',c:false,exp:'No es dulce.'},
+                        {t:'Acidez',c:false,exp:'La acidez la da el vinagre del arroz.'}
+                    ]},
+                    {q:'¿Qué suele comerse con la mano?',o:[
+                        {t:'Nigiri',c:true,exp:'Tradicionalmente se come con la mano.'},
+                        {t:'Chirashi',c:false,exp:'Se come en bol con utensilios.'},
+                        {t:'Sashimi',c:false,exp:'Se come con palillos.'}
+                    ]},
+                    {q:'¿Cómo debe estar el arroz de sushi?',o:[
+                        {t:'A temperatura ambiente',c:true,exp:'Ni muy caliente ni frío.'},
+                        {t:'Helado',c:false,exp:'Afecta textura y sabor.'},
+                        {t:'Hirviendo',c:false,exp:'Arruina el montaje.'}
+                    ]},
+                    {q:'¿Qué es tamagoyaki?',o:[
+                        {t:'Tortilla japonesa dulce',c:true,exp:'Con azúcar y salsa de soya.'},
+                        {t:'Salsa picante',c:false,exp:'No es salsa.'},
+                        {t:'Alga',c:false,exp:'Eso sería nori.'}
+                    ]},
+                    {q:'El maki tradicionalmente está…',o:[
+                        {t:'Envuelto en nori',c:true,exp:'Maki = rollo con alga nori.'},
+                        {t:'Sin alga',c:false,exp:'Sería otra preparación.'},
+                        {t:'En forma de cono',c:false,exp:'Esa es la forma del temaki.'}
+                    ]}
+                ];
+
+                function shuffle(a){const r=a.slice();for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]];}return r;}
+                const round = shuffle(bank).slice(0,7);
+                let idx=0; let score=0; let selected=false; let currentOpts=[];
+
+                function updateBar(){ if(bar){ bar.style.width = Math.round((idx/7)*100)+'%'; } if(pEl){ pEl.textContent = 'Pregunta '+(idx+1)+'/7'; } if(sEl){ sEl.textContent = 'Puntos: '+score; } }
+                function render(){
+                    const item = round[idx];
+                    qEl.textContent = item.q;
+                    aEl.innerHTML=''; expEl.textContent=''; selected=false;
+                    currentOpts = shuffle(item.o);
+                    currentOpts.forEach((op, i)=>{
+                        const b=document.createElement('button');
+                        b.className='answer-btn';
+                        b.textContent=op.t;
+                        b.onclick=function(){
+                            if(selected) return; selected=true;
+                            Array.from(aEl.children).forEach((btn,k)=>{
+                                const ok=currentOpts[k].c; btn.classList.add(ok?'correct':'incorrect');
+                                if(btn===b) btn.classList.add('chosen');
+                            });
+                            if(op.c) score++; expEl.textContent = op.exp; nBtn.disabled=false;
+                        };
+                        aEl.appendChild(b);
+                    });
+                    nBtn.disabled=true; updateBar();
+                }
+
+                nBtn.onclick=function(){ if(!selected) return; idx++; if(idx>=7){
+                    if(bar){ bar.style.width='100%'; }
+                    aEl.innerHTML=''; qEl.textContent='¡Completado!'; expEl.textContent=''; nBtn.style.display='none';
+                    if(resEl){
+                        resEl.style.display='block';
+                        let html = '';
+                        if(score===7){
+                            html = '<div class="win-banner"><h2 class="win-title">¡Felicidades! 🎉</h2><p>¡Completaste las 7 preguntas y ganaste tu sushi digital!</p></div>';
+                        } else {
+                            html = '<h4>¡Buen intento!</h4><p>Tu puntaje fue '+score+' de 7. Intenta de nuevo para ganar un sushi digital ✨</p>';
+                        }
+                        html += '<div class="quiz-final-buttons"><button onclick="location.reload()" class="quiz-action-btn retry-btn">🔄 Volver a intentar</button><a href="index.html" class="quiz-action-btn home-btn">🏠 Volver al inicio</a></div>';
+                        resEl.innerHTML = html;
+                    }
+                } else { render(); } };
+
+                render();
+            }, 50);
+        });
+    })();
+    </script>
+</body>
+</html>
+
+
